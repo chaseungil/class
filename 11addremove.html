@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+      integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+      }
+
+      div {
+        width: 50%;
+        height: 100px;
+        background-color: #ccc;
+      }
+      .on {
+        color: red;
+        background-color: #000;
+        width: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <div>박스</div>
+    <button class="btn01">add</button>
+    <button class="btn02">remove</button>
+    <button class="btn03">toggle</button>
+    <script>
+      $(".btn01").on("click", function () {
+        $("div").addClass("on");
+      });
+      $(".btn02").on("click", function () {
+        $("div").removeClass("on");
+      });
+      $(".btn03").on("click", function () {
+        $("div").toggleClass("on");
+      });
+    </script>
+  </body>
+</html>
+<!--
+$("선택자").addClass("클래스명") :: 클래스를 추가
+$("선택자").removeClass("클래스명") :: 클래스 삭제
+$("선택자").toggleClass("클래스명") :: 클래스를 추가 또는 삭제를 번갈아 가면서 동작
+
+-->

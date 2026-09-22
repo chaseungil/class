@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+      integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+      }
+
+      /* wrap01 */
+      /* #wrap01 {
+              width: 500px;
+              .vs01 li:nth-of-type(2) {
+                display: none;
+              }
+              .vs01 li:nth-of-type(3) {
+                display: none;
+              }
+              .vs01 li:nth-of-type(4) {
+                display: none;
+              }
+              .vs02 {
+                display: flex;
+                gap: 20px;
+                li {
+                  width: calc(100% / 4);
+                  cursor: pointer;
+                  img {
+                    width: 100%;
+                  }
+                }
+              }
+            } */
+      #wrap02 {
+        .front {
+          background-color: #fff;
+          width: 100%;
+          height: 100vh;
+          padding: 20px;
+          text-align: right;
+          display: none;
+          position: relative;
+          top: 0px;
+          left: 0px;
+          p {
+            display: inline-block;
+            border: 1px solid gold;
+            color: orange;
+            padding: 5px;
+            cursor: pointer;
+          }
+          .txt {
+            color: orange;
+            text-align: center;
+            line-height: 3rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+        .back {
+          background-color: #000;
+          width: 100%;
+          height: 100vh;
+          padding: 20px;
+          text-align: right;
+          p {
+            display: inline-block;
+            border: 1px solid gold;
+            color: gold;
+            padding: 5px;
+            cursor: pointer;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <section id="wrap01">
+      <ul class="vs01">
+        <li><img src="img/pic1.jpg" alt="" /></li>
+        <li><img src="img/pic2.jpg" alt="" /></li>
+        <li><img src="img/pic3.jpg" alt="" /></li>
+        <li><img src="img/pic4.jpg" alt="" /></li>
+      </ul>
+      <ul class="vs02">
+        <li class="btn01"><img src="img/pic1.jpg" alt="" /></li>
+        <li class="btn02"><img src="img/pic2.jpg" alt="" /></li>
+        <li class="btn03"><img src="img/pic3.jpg" alt="" /></li>
+        <li class="btn04"><img src="img/pic4.jpg" alt="" /></li>
+      </ul>
+      <script>
+        $(".btn01").on("click", function () {
+          $(".vs01 li").hide();
+          $(".vs01 li:nth-of-type(1)").fadeIn();
+        });
+        $(".btn02").on("click", function () {
+          $(".vs01 li").hide();
+          $(".vs01 li:nth-of-type(2)").fadeIn();
+        });
+        $(".btn03").on("click", function () {
+          $(".vs01 li").hide();
+          $(".vs01 li:nth-of-type(3)").fadeIn();
+        });
+        $(".btn04").on("click", function () {
+          $(".vs01 li").hide();
+          $(".vs01 li:nth-of-type(4)").fadeIn();
+        });
+      </script>
+    </section> -->
+    <section id="wrap02">
+      <ul>
+        <li class="front">
+          <p>X</p>
+          <div class="txt">
+            <h2>창업기</h2>
+            <h2>성장기</h2>
+            <h2>성숙기</h2>
+            <h2>제2의 성장기</h2>
+            <h2>오늘의 한진, 매래의 한진</h2>
+          </div>
+        </li>
+        <li class="back"><p>Menu</p></li>
+      </ul>
+      <script>
+        $(".back p").on("click", function () {
+          $(".front").slideDown();
+          $(".front p").show();
+          $(".back").slideUp();
+          $(".back p").hide();
+          $(".txt").hide();
+          $(".txt").slideDown(2000);
+        });
+        $(".front p").on("click", function () {
+          $(".front").slideUp();
+          $(".front p").hide();
+          $(".back").slideDown();
+          $(".back p").show();
+        });
+      </script>
+    </section>
+  </body>
+</html>

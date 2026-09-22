@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+      integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>list01</li>
+      <li>list02</li>
+      <li>list03</li>
+      <li>list04</li>
+    </ul>
+    <script>
+      $("li").eq(0).css({ color: "red" });
+      $("li").eq(1).css({ "background-color": "#ccc" });
+      $("li").eq(2).css({ "font-weight": "bold" });
+      $("li").eq(3).css({ "font-style": "italic" });
+      // $("li:nth-of-type(3)").css({ "font-weight": "bold" });
+    </script>
+  </body>
+</html>
+
+<!--
+eq(순번) :: 여러개의 요소 중에서 원하는 순번 요소를 선택
+this :: 이벤트가 발생이 된 요소
+index() :: 몇 번째 순번인지 알아내기
+eq() :: 몇 번째 것을 선택하기
+
+i = $(this).index() =>이벤트가 발생이 된 요소의 순번을 i라는 변수의 넣어라
+$("li").eq(i).css({"color":"red"}) => li의 순번에 해당하는 요소의 클자색을 빨강으로 해라
+
+-->

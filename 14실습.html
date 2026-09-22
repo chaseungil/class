@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      ul {
+        list-style: none;
+      }
+      .wrap01 {
+        width: 500px;
+        margin: 0px auto;
+      }
+      .up li {
+        display: none;
+      }
+      .up li:nth-of-type(1) {
+        display: block;
+      }
+      .wrap01 img {
+        width: 100%;
+        display: block;
+      }
+      .down {
+        padding: 20px;
+        display: flex;
+        gap: 20px;
+      }
+      .down li {
+        border: 1px solid transparent;
+        cursor: pointer;
+      }
+      .down .on {
+        border: 1px solid #000;
+      }
+
+      .wrap02 {
+        width: 500px;
+        margin: 100px auto;
+        display: flex;
+        align-items: flex-end;
+      }
+      .left {
+        width: 50%;
+        background-image: url("img/img-phone-frame.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding: 5px;
+      }
+      .left li {
+        display: none;
+      }
+      .left img {
+        width: 100%;
+        display: block;
+        border-radius: 30px;
+      }
+      .right {
+        width: 50%;
+        font-size: 2rem;
+        text-align: center;
+      }
+      .right li {
+        background-image: linear-gradient(45deg, #fff, olivedrab);
+        display: none;
+        cursor: pointer;
+        padding: 0px 30px;
+      }
+      li:nth-of-type(1) {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap01">
+      <ul class="up">
+        <li><img src="img/092101.jpg" alt="" /></li>
+        <li><img src="img/092102.jpg" alt="" /></li>
+        <li><img src="img/092103.jpg" alt="" /></li>
+        <li><img src="img/092104.jpg" alt="" /></li>
+        <li><img src="img/092105.jpg" alt="" /></li>
+      </ul>
+      <ul class="down">
+        <li><img src="img/092101.jpg" alt="" /></li>
+        <li><img src="img/092102.jpg" alt="" /></li>
+        <li><img src="img/092103.jpg" alt="" /></li>
+        <li><img src="img/092104.jpg" alt="" /></li>
+        <li><img src="img/092105.jpg" alt="" /></li>
+      </ul>
+      <script>
+        $(".down li").on("click", function () {
+          $(".up li").hide();
+          i = $(this).index();
+          $(".up li").eq(i).show();
+          $(".down li").removeClass("on");
+          $(this).addClass("on");
+        });
+      </script>
+    </div>
+    <div class="wrap02">
+      <ul class="left">
+        <li><img src="img/front.png" alt="" /></li>
+        <li><img src="img/back.png" alt="" /></li>
+      </ul>
+      <ul class="right">
+        <li>홈화면</li>
+        <li>잠금화면</li>
+      </ul>
+    </div>
+    <script>
+      $(".right li").on("click", function () {
+        $(".left li").show();
+        i = $(this).index();
+        $(".left li").eq(i).hide();
+        $(".right li").show();
+        $(this).hide();
+      });
+    </script>
+  </body>
+</html>

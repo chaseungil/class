@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+      integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+      }
+      /* wrap01 */
+      .box {
+        width: 500px;
+        height: 200px;
+        background-color: orange;
+      }
+      /* wrap02 */
+      #wrap02 {
+        width: 500px;
+        margin: 50px 0px;
+      }
+      .menu > ul {
+        display: flex;
+        gap: 10px;
+      }
+      .menu_more {
+        border: 1px solid #000;
+        padding: 5px;
+        display: none;
+        li {
+          line-height: 2rem;
+        }
+      }
+      /* wrap03 */
+      #wrap03 {
+        width: 500px;
+        margin: 50px 0px;
+        li {
+          margin: 20px 0px;
+          padding-bottom: 10px;
+          cursor: pointer;
+          border-bottom: 2px solid #ccc;
+        }
+        h2 {
+          font-size: 1.2rem;
+        }
+      }
+      #wrap03 ul li > p {
+        display: none;
+        margin: 10px 0px;
+      }
+      #wrap03 ul li div {
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="wrap01">
+      <div class="box">박스</div>
+      <button class="btn01">slideUp</button>
+      <button class="btn02">slideDown</button>
+      <button class="btn03">slideToggle</button>
+    </section>
+    <script>
+      $(".btn01").on("click", function () {
+        $(".box").slideUp(1000);
+      });
+      $(".btn02").on("click", function () {
+        $(".box").slideDown(1000);
+      });
+      $(".btn03").on("click", function () {
+        $(".box").slideToggle(1000);
+      });
+    </script>
+    <section id="wrap02">
+      <div class="menu">
+        <ul>
+          <li><a href="#">메뉴1</a></li>
+          <li><a href="#">메뉴2</a></li>
+          <li><a href="#">메뉴3</a></li>
+          <li>
+            <a href="#">메뉴4</a><i class="fa-solid fa-sort-down"></i>
+            <ul class="menu_more">
+              <li><a href="#">서브메뉴01</a></li>
+              <li><a href="#">서브메뉴02</a></li>
+              <li><a href="#">서브메뉴03</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <script>
+      $(".menu .fa-sort-down").on("click", function () {
+        $(".menu_more").slideToggle();
+      });
+    </script>
+    <section id="wrap03">
+      <ul>
+        <li>
+          <div>
+            <h2>지원 환경은 어떻게 되나요?</h2>
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <p>
+            Web(JavaScript), iOS, Android, 키오스크(Electron) 환견을 지원합니다.
+            특수 환경의 경우 기술 팀과 사전 협의가 필요합니다.
+          </p>
+        </li>
+        <li>
+          <div>
+            <h2>인터넷 연결이 불한정한 현장에서도 작동하나요?</h2>
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <p>
+            오프라인 모드 및 저대역폭 환경 최적화 옵션을 제공합니다. 구체적인
+            현장 조건에 맞는 솔루션을 제안해 드립니다.
+          </p>
+        </li>
+      </ul>
+    </section>
+    <script>
+      $("#wrap03 li:nth-of-type(1)").on("click", function () {
+        $("#wrap03 li:nth-of-type(2) p").slideUp();
+        $("#wrap03 li:nth-of-type(1) p").slideToggle();
+        $("#wrap03 li h2").css({ color: "black" });
+        $("#wrap03 li:nth-of-type(1) h2").css({ color: "blue" });
+        $("#wrap03 li i").css({ transform: "rotate(0)" });
+        $("#wrap03 li:nth-of-type(1) i").css({ transform: "rotate(45deg)" });
+      });
+      $("#wrap03 li:nth-of-type(2)").on("click", function () {
+        $("#wrap03 li:nth-of-type(1) p").slideUp();
+        $("#wrap03 li:nth-of-type(2) p").slideToggle();
+        $("#wrap03 li h2").css({ color: "black" });
+        $("#wrap03 li:nth-of-type(2) h2").css({ color: "blue" });
+        $("#wrap03 li i").css({ transform: "rotate(0)" });
+        $("#wrap03 li:nth-of-type(2) i").css({ transform: "rotate(45deg)" });
+      });
+    </script>
+  </body>
+</html>
+<!-- $("선택자").on("이벤트", function(밀리단위초){
+ 실행문})
+ $("").on("",function(){
+ $("선택자").slideUp() => 위로 올라가면서 화면에 안보이게 됨
+ $("선택자").slideDown() => 아래로 내려가면서 화면에 안보이게 됨
+ $("선택자").slideToggle() => 한가지 버튼으로 2가지 기능(up, down)을 가지고 있음
+ })
+
+ slideUp() - ()안에는 밀리초 입력. 기본값은 500(0.5)초 임
+
+
+
+ -->

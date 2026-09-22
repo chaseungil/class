@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      .box01 {
+        width: 500px;
+        height: 200px;
+        background-color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box01">박스</div>
+    <button class="btn01">보이기</button>
+    <button class="btn02">숨기기</button>
+    <button class="btn03">토글</button>
+    <script>
+      $(".btn02").on("click", function () {
+        $(".box01").hide(2000);
+      });
+      $(".btn01").on("click", function () {
+        $(".box01").show(500);
+      });
+      $(".btn03").on("click", function () {
+        $(".box01").toggle(1000);
+      });
+    </script>
+  </body>
+</html>

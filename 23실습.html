@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      div {
+        width: 300px;
+        height: 200px;
+        background-color: orange;
+        /* margin-top: 200px; */
+      }
+    </style>
+  </head>
+  <body>
+    <button class="start">시작</button>
+    <div>박스</div>
+    <script>
+      $("div").animate({ "margin-top": "200px" });
+      $(".start").on("click", function () {
+        $("div").animate({ "margin-top": "0px" });
+      });
+    </script>
+  </body>
+</html>

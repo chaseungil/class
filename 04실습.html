@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+      integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        word-break: keep-all;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+      }
+      .menu {
+        display: flex;
+        gap: 10px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        line-height: 2rem;
+        li:nth-of-type(1) {
+          border-bottom: 3px solid #000;
+        }
+      }
+      h3 {
+        font-size: 1.2rem;
+        margin: 20px 0px;
+        font-weight: normal;
+      }
+      h4 {
+        font-size: 1.2rem;
+        font-weight: normal;
+      }
+      .info {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        cursor: pointer;
+      }
+      .txt {
+        display: none;
+        margin: 10px 0px;
+      }
+      p {
+        color: #999;
+      }
+      .wrap02 {
+        margin: 50px 0px;
+      }
+      .wrap02 > div {
+        display: flex;
+        gap: 10px;
+      }
+      .wrap02_left {
+        li:nth-of-type(2) {
+          display: none;
+        }
+        li:nth-of-type(3) {
+          display: none;
+        }
+      }
+
+      .wrap02_right {
+        font-size: 1.2rem;
+        line-height: 2rem;
+        li {
+          cursor: pointer;
+        }
+        li:hover {
+          color: red;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="menu">
+      <li><a href="#">개인정보처리방침</a></li>
+      <li><a href="#">이용약관</a></li>
+      <li><a href="#">1:1문의</a></li>
+      <li><a href="#">공지사항</a></li>
+    </ul>
+    <h3>MINIMAL CARE FOR YOUR SKIN, GENTLE CARE FOR YOUR HEART.</h3>
+    <div class="info">
+      <h4>INFO</h4>
+      <i class="fa-solid fa-chevron-up"></i>
+    </div>
+    <div class="txt">
+      <p>
+        주식회사 에코미니멀 (ECOMINIMAL) 대표 : 박국철 사업자등록번호:
+        258-86-03556 [사업자정보확인]
+      </p>
+      <p>통신판매업 신고번호 : 2025-화성동탄-5455</p>
+      <p>
+        주소 : 18469 경기도 화성시 동탄첨단산업1로 27, 제비동 23층
+        2344호(영천동, 금강 펜테리움 IX타워)
+      </p>
+      <p>고객센터 : 031-723-0323 이메일 : contact@ecominimal.co.kr</p>
+    </div>
+    <script>
+      $(".info").on("click", function () {
+        $(".txt").toggle();
+      });
+    </script>
+    <div class="wrap02">
+      <h2>SHOP THE ROOM</h2>
+      <div>
+        <ul class="wrap02_left">
+          <li class="img01"><img src="img/pic1.jpg" alt="" /></li>
+          <li class="img02"><img src="img/pic2.jpg" alt="" /></li>
+          <li class="img03"><img src="img/pic3.jpg" alt="" /></li>
+        </ul>
+        <ul class="wrap02_right">
+          <li class="living">Living Room</li>
+          <li class="dining">Dining Room</li>
+          <li class="bed">Bed Room</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      $(".living").on("click", function () {
+        $(".wrap02_left li").hide();
+        $(".img01").show();
+      });
+      $(".dining").on("click", function () {
+        $(".wrap02_left li").hide();
+        $(".img02 ").show();
+      });
+      $(".bed").on("click", function () {
+        $(".wrap02_left li").hide();
+        $(".img03").show();
+      });
+    </script>
+  </body>
+</html>
