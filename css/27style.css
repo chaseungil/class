@@ -199,20 +199,3 @@ li:hover h3 {
     left: 0px;
   }
 }
-.wrap08 {
-  width: 500px;
-  margin: 50px auto;
-  color: #fff;
-  ul {
-    width: 100%;
-    display: flex;
-    border: 10px solid #ccc;
-    overflow: hidden;
-  }
-  li {
-    border: 1px solid red;
-    height: 200px;
-    width: 600px;
-    flex-shrink: 0;
-  }
-}
