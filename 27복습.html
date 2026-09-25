@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+      integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/27style.css" />
+  </head>
+  <body>
+    <div class="wrap01">
+      <h2>wrap01</h2>
+      <ul>
+        <li><h3>현재상영작</h3></li>
+        <li><h3>상영예정</h3></li>
+      </ul>
+      <ul>
+        <li><img src="img/pic1.jpg" alt="" /></li>
+        <li><img src="img/pic2.jpg" alt="" /></li>
+      </ul>
+    </div>
+    <script>
+      $(".wrap01 li").on("click", function () {
+        i = $(this).index();
+        $(".wrap01 ul:nth-of-type(2) li").hide();
+        $(".wrap01 ul:nth-of-type(2) li").eq(i).show();
+      });
+    </script>
+    <div class="wrap02">
+      <h2>wrap02</h2>
+      <ul>
+        <li><h3>현재상영작</h3></li>
+        <li><h3>상영예정</h3></li>
+      </ul>
+      <ul>
+        <li>
+          <div>
+            <img src="img/pic1.jpg" alt="" />
+            <img src="img/pic2.jpg" alt="" />
+          </div>
+        </li>
+        <li>
+          <div>
+            <img src="img/pic3.jpg" alt="" />
+            <img src="img/pic4.jpg" alt="" />
+          </div>
+        </li>
+      </ul>
+    </div>
+    <script>
+      $(".wrap02 li").on("click", function () {
+        i = $(this).index();
+        $(".wrap02 ul:nth-of-type(2) li").hide();
+        $(".wrap02 ul:nth-of-type(2) li").eq(i).show();
+      });
+    </script>
+    <div class="wrap03">
+      <h2>wrap03</h2>
+      <div class="wrap">
+        <a href="#">
+          <p>contact</p>
+          <div class="bg"></div>
+        </a>
+      </div>
+    </div>
+    <script>
+      $(".wrap03 a").on("mouseenter", function () {
+        $(this).find(".bg").stop().slideUp();
+        $(this).css({ color: "#fff" });
+      });
+      $(".wrap03 a").on("mouseleave", function () {
+        $(this).find(".bg").stop().slideDown();
+        $(this).css({ color: "#000" });
+      });
+    </script>
+    <div class="wrap04">
+      <h2>wrap04</h2>
+      <div>
+        <ul class="menu">
+          <li>Seoul</li>
+          <li>Jeju</li>
+        </ul>
+        <ul class="list">
+          <li>
+            <img src="img/pic1.jpg" alt="" />
+            <p>Seoul</p>
+          </li>
+          <li>
+            <img src="img/pic2.jpg" alt="" />
+            <p>Jeju</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      $(".menu li").on("click", function () {
+        i = $(this).index();
+        console.log(i);
+        $(".list li").hide();
+        $(".list li").eq(i).slideDown(2000);
+      });
+    </script>
+    <div class="wrap05">
+      <h2>wrap05</h2>
+      <ul class="large">
+        <li><img src="img/pic1.jpg" alt="" /></li>
+        <li><img src="img/pic2.jpg" alt="" /></li>
+        <li><img src="img/pic3.jpg" alt="" /></li>
+        <li><img src="img/pic4.jpg" alt="" /></li>
+      </ul>
+      <ul class="small">
+        <li><img src="img/pic1.jpg" alt="" /></li>
+        <li><img src="img/pic2.jpg" alt="" /></li>
+        <li><img src="img/pic3.jpg" alt="" /></li>
+        <li><img src="img/pic4.jpg" alt="" /></li>
+      </ul>
+    </div>
+    <script>
+      $(".small li").on("click", function () {
+        i = $(this).index();
+        $(".large li").animate({ opacity: "0.5" });
+        $(".large li").eq(i).animate({ opacity: "1" });
+      });
+    </script>
+    <div class="wrap06">
+      <h2>wrap06</h2>
+      <ul>
+        <li>
+          <a href="#">
+            <p>menu01</p>
+            <div class="line"></div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <p>menu02</p>
+            <div class="line"></div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <p>menu03</p>
+            <div class="line"></div>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <p>menu04</p>
+            <div class="line"></div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <script>
+      $(".wrap06 li").on("mouseenter", function () {
+        $(this).find(".line").stop().animate({ width: "100%" });
+      });
+      $(".wrap06 li").on("mouseleave", function () {
+        $(this).find(".line").stop().animate({ width: "0" });
+      });
+    </script>
+    <div class="wrap07">
+      <h2>wrap07</h2>
+      <ul class="wrap">
+        <li class="top"></li>
+        <li class="right"></li>
+        <li class="left"></li>
+        <li class="bottom"></li>
+      </ul>
+    </div>
+    <script>
+      $(".wrap07 .wrap").on("mouseenter", function () {
+        $(".wrap07 .top").stop().animate({ width: "100%" }, 2000);
+        $(".wrap07 .right").stop().animate({ width: "100%" }, 2000);
+        $(".wrap07 .bottom").stop().animate({ width: "100%" }, 2000);
+        $(".wrap07 .left").stop().animate({ width: "100%" }, 2000);
+      });
+      $(".wrap07 .wrap").on("mouseleave", function () {
+        $(this).find("li").stop().animate({ width: "0" });
+      });
+    </script>
+  </body>
+</html>
